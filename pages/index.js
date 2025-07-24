@@ -15,7 +15,7 @@ export default function Home({gradientClass,textColor,darkTheme}) {
       
         <Hero darkTheme={darkTheme} textColor={textColor} />
         <BlogCard darkTheme={darkTheme} textColor={textColor} />
-       <Footer darkTheme={darkTheme} textColor={textColor} />
+     
     </div>
    
   );
