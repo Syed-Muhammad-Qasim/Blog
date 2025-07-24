@@ -20,7 +20,7 @@ export default function Signup({ textColor, darkTheme }) {
   : "bg-gradient-to-r from-[#74c0fc] to-[#4dabf7] text-white hover:from-[#4dabf7] hover:to-[#2563eb]";
   return (
     <div className={`${cardbg} mt-[75px] flex flex-col  justify-center w-[400px] min-h-[500px] rounded-lg shadow-lg px-8 gap-4 mb-16 pb-12  md:w-[600px] lg:w-[800px]`}>
-      <h2 className={`text-3xl font-bold mb-6 text-center ${txtcolor} `}>Sign Up</h2>
+      <h2 className={`text-3xl font-bold mb-6 text-center ${txtcolor} `}>Sign In</h2>
       <form className="flex flex-col gap-6">
         <input
           type="text"
@@ -45,7 +45,7 @@ export default function Signup({ textColor, darkTheme }) {
           className={`${buttonBg} text-white py-2   w-full rounded-full`}
           style={{ cursor: 'pointer' }}
         >
-          Create Account
+          Sign in
         </button>
       </form>
     </div>
