@@ -45,7 +45,11 @@ export default function Signup({ textColor, darkTheme }) {
   return (
     <div className={`${cardbg} mt-[75px] flex flex-col  justify-center w-[400px] min-h-[500px] rounded-lg shadow-lg px-8 gap-4 mb-16 pb-12  md:w-[600px] lg:w-[800px]`}>
       <h2 className={`text-3xl font-bold mb-6 text-center ${txtcolor} `}>Sign In</h2>
-      <form className="flex flex-col gap-6">
+      <form className="flex flex-col gap-6"
+       onSubmit={e => {
+    e.preventDefault();
+    handleLogin();}}
+      >
         <input
           type="text"
           name="name"
@@ -74,7 +78,7 @@ export default function Signup({ textColor, darkTheme }) {
           type="submit"
           className={`${buttonBg} text-white py-2   w-full rounded-full`}
           style={{ cursor: 'pointer' }}
-          onClick={handleLogin}
+          
         >
           Sign in
         </button>
