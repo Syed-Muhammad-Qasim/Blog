@@ -1,8 +1,32 @@
 import Image from "next/image";
-
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Signup({ textColor, darkTheme }) {
 
+ const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  const validUser = {
+    name: "Muhammad Qasim",
+    email: "test@example.com",
+    password: "123456"
+  };
+
+  const handleLogin = () => {
+    if(
+      name === validUser.name &&
+      email === validUser.email &&
+      password === validUser.password
+    ){
+      router.push("/blogformpage");
+    }
+    else{
+      alert("Invalid credentials");
+    }
+  };
     const cardbg = darkTheme
   ? "bg-gradient-to-br from-[#232946] via-[#1e3a8a] to-[#18122B] shadow-lg shadow-indigo-900/20 border border-[#232946]"
   : "bg-gradient-to-br from-[#d2ecfb] via-[#c2e1f7] to-[#b2d6f3] shadow-lg";
@@ -26,24 +50,31 @@ export default function Signup({ textColor, darkTheme }) {
           type="text"
           name="name"
           placeholder="Name"
+          value={name}
+          onChange={e => setName(e.target.value)}
           className={` ${inputBg} px-4 py-2 w-full rounded-full`}
         />
         <input
           type="email"
           name="email"
           placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
           className={` ${inputBg} px-4 py-2 w-full rounded-full`}
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
           className={` ${inputBg} px-4 py-2 w-full rounded-full`}
         />
         <button
-          type="button"
+          type="submit"
           className={`${buttonBg} text-white py-2   w-full rounded-full`}
           style={{ cursor: 'pointer' }}
+          onClick={handleLogin}
         >
           Sign in
         </button>
